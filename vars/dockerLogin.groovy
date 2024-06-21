@@ -1,5 +1,7 @@
-def call() {
-  withCredentials([usernamePassword(credentialsId: 'nexus-cred', passwordVariable: 'passwd', usernameVariable: 'username')]) {
-  sh "docker login -u $username -p $passwd 172.17.0.3:5000"
+def call(String credentialsId, String usernameVar, String passwordVar, String dockerRegistry) {
+  withCredentials([usernamePassword(credentialsId: credentialsId, passwordVariable: passwordVar, usernameVariable: usernameVar)]) {
+   // use provided parameter here.. 
+  sh "docker login -u ${env[usernameVar]} -p ${env[passwordVar]} $dockerRegistry"
 }
 }
+
