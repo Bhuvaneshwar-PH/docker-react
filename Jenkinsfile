@@ -18,12 +18,12 @@ pipeline {
         }
           stage('docker build') {
             steps {
-               dockerBuild()
+               dockerBuild '172.17.0.3:5000/node_app:2.0'
             }
         }
         stage('docker push') {
             steps {
-               dockerPush()
+               dockerPush '172.17.0.3:5000/node_app:2.0'
             }
         }
     }
