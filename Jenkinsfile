@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('git') {
             steps {
-                gitCall()
+                gitCalls()
             }
         }
         
