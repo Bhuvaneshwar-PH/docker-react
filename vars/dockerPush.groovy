@@ -1,3 +1,3 @@
-def call(string imageName) {
+def call(String imageName) {
   sh "docker push ${imageName} "
 }
