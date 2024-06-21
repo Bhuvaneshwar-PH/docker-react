@@ -12,7 +12,13 @@ pipeline {
        
         stage('docker-login') {
             steps {
-               dockerLogin()
+                script {
+                    def credentialsId = 'nexus-cred'
+                    def usernameVar = 'username'
+                    def passwordVar = 'passwd'
+                    def dockerRegistry = '172.17.0.3:5000'
+                    dockerLogin(credentialsId,usernameVar,passwordVar,dockerRegistry)
+                }
                 }
             
         }
