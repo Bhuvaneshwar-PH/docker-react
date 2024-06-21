@@ -1,10 +1,11 @@
+@Library("my-shared-library") _
 pipeline {
     agent any
   
     stages {
         stage('git') {
             steps {
-                git 'https://github.com/Bhuvaneshwar-PH/docker-react.git'
+                gitCall()
             }
         }
         
