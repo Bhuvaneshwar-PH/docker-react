@@ -14,7 +14,7 @@ pipeline {
             steps {
                dockerLogin()
                 }
-            }
+            
         }
           stage('docker build') {
             steps {
