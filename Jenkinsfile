@@ -1,4 +1,4 @@
-@Library("my-shared-library") _   // only used ( _ ) when there is no def mention in next line of @Library
+@Library("my-shared-lib") _   // only used ( _ ) when there is no def mention in next line of @Library
 pipeline {
     agent any
   
