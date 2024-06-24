@@ -17,7 +17,7 @@ pipeline {
                     def credentialsId = 'nexus-cred'
                     def usernameVar = 'username'
                     def passwordVar = 'passwd'
-                    def dockerRegistry = '172.17.0.3:5000'
+                    def dockerRegistry = '34.229.161.167:5000'
                     
                     // call dockerLogin.groovy from VARS folder
                     dockerLogin(credentialsId,usernameVar,passwordVar,dockerRegistry)
@@ -28,12 +28,12 @@ pipeline {
           stage('docker build') {
             steps {
                 // 
-               dockerBuild '172.17.0.3:5000/node_app:2.0'
+               dockerBuild '34.229.161.167:5000/node_app:2.0'
             }
         }
         stage('docker push') {
             steps {
-               dockerPush '172.17.0.3:5000/node_app:2.0'
+               dockerPush '34.229.161.167:5000/node_app:2.0'
             }
         }
     }
